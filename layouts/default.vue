@@ -10,9 +10,6 @@
 </template>
 
 <style>
-html {
-  font-size: Jost;
-}
 .route-name {
   text-align: center;
 }
