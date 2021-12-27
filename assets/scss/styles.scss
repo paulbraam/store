@@ -1,0 +1,40 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+html {
+  font-family: 'Jost';
+}
+
+.heading {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.sub_heading {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.button {
+  @include button(
+    $default_button_bg_color,
+    $default_button_hover_bg_color,
+    $default_button_text_color
+  );
+}
+
+.button-info {
+  @include button(
+    $info_button_bg_color,
+    $info_button_hover_bg_color,
+    $info_button_text_color
+  );
+}
+
+.button-danger {
+  @include button(
+    $danger_button_bg_color,
+    $danger_button_hover_bg_color,
+    $danger_button_text_color
+  );
+}
