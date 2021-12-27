@@ -1,6 +1,9 @@
 # Online Store Example
 
-Features:
+## Live demo
+Avaialble at: https://paulbraam.github.io/store/
+
+## Features
 
 - Add-to-Cart, Remove-from-Cart actions
 - Persisting cart data throughout reloads
