@@ -82,13 +82,14 @@ export default class CartItemCard extends Vue {}
   }
   .cart-item__actions {
     margin: auto;
-    flex: 0 0 auto;
+    flex: 0 0 115px;
     min-width: 100px;
   }
   .cart-item__actions > * {
     width: 100%;
   }
   .cart-item__info {
+    flex: 1 1 auto;
     padding: 1rem;
   }
   .cart-item__price {
