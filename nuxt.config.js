@@ -39,10 +39,6 @@ export default {
 
   env: {
     API_ORIGIN: process.env.API_ORIGIN,
-    CLIENT_ORIGIN:
-      process.env.NODE_ENV === 'production'
-        ? process.env.CLIENT_ORIGIN
-        : 'http://localhost:3000',
   },
 
   // Auto import components: https://go.nuxtjs.dev/config-components

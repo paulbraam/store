@@ -29,10 +29,7 @@ import Modal from '../../components/Modal.vue';
 @Component({
   async fetch(this: Products) {
     try {
-      const data = await this.$axios.$get(
-        process.env.CLIENT_ORIGIN + '/api/products'
-      );
-      console.log(data);
+      const data = await this.$axios.$get('/api/products');
       const items = data.map((item: IItem) => {
         item.count = 1;
         return item;
