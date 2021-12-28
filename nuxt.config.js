@@ -3,6 +3,11 @@ export default {
   router: {
     base: '/store/',
   },
+  // server requests
+  serverMiddleware: [
+    // Will register file from project server-middleware directory to handle /server-middleware/* requires
+    { path: '/api', handler: '~/server-middleware/rest-api.ts' },
+  ],
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Store',
@@ -19,7 +24,6 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap',
@@ -47,7 +51,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/axios'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

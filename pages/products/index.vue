@@ -22,12 +22,23 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { mapState, mapActions } from 'vuex';
-import axios from 'axios';
 import ShopItemCard from '../../components/ShopItemCard.vue';
 import { IItem } from '../../store/types';
 import Modal from '../../components/Modal.vue';
 
 @Component({
+  async fetch(this: Products) {
+    try {
+      const data = await this.$axios.$get('/api/products');
+      const items = data.map((item: IItem) => {
+        item.count = 1;
+        return item;
+      });
+      this.$set(this, 'items', items);
+    } catch (err) {
+      console.error(err);
+    }
+  },
   components: {
     ShopItemCard,
     Modal,
@@ -68,20 +79,6 @@ export default class Products extends Vue {
     setTimeout(() => {
       this.isModalVisible = false;
     }, 1000);
-  }
-
-  async created() {
-    try {
-      const productsApiUrl = process.env.API_ORIGIN + '/products';
-      const res = await axios.get(productsApiUrl);
-      const items = res.data.map((item: IItem) => {
-        item.count = 1;
-        return item;
-      });
-      this.$set(this, 'items', items);
-    } catch (err) {
-      console.error(err);
-    }
   }
 }
 </script>
